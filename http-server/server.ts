@@ -17,3 +17,5 @@ const s = serve(addr);
     }
   }
 })();
+
+console.log(`Server is runnning. Access to http://${addr}`);
