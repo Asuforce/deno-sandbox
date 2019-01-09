@@ -1,7 +1,10 @@
 import { serve } from "https://deno.land/x/net/http.ts";
 
+const addr = "0.0.0.0:8080";
+const s = serve(addr);
+
 (async () => {
-  for await (const req of serve("0.0.0.0:8080")) {
+  for await (const req of s) {
     if (req.url === "/") {
       const contentType = req.headers.get("content-type");
       await req.respond({
